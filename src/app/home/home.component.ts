@@ -13,6 +13,12 @@ export class HomeComponent implements OnInit,OnDestroy
 {
     nations: Nation[] = [];
     hilitedName = '...';
+    name = "";
+    nativeName = "";
+    capital = "";
+    latitude = 0;
+    longitude = 0;
+    
 
     constructor(
         private http:HttpClient,
@@ -31,7 +37,14 @@ export class HomeComponent implements OnInit,OnDestroy
         this.hilitedName = nation.name;
         this.changeDetectorRef.detectChanges();
     }
+    tbNationSelected(nation:Nation){
+        this.name = nation.name;
+        this.nativeName = nation.nativeName;
+        this.capital = nation.capital;
+        this.latitude = nation.latitude;
+        this.longitude = nation.longitude;
 
+    }
     ngOnDestroy(): void {
     }
 }
