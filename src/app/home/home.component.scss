@@ -10,7 +10,9 @@
     font-size: .90rem;
     color: blue;
 }
-
+.nations:hover{
+    @extend .hilite;
+}
 .nations {
     width: 100%;
     overflow-x: auto;
